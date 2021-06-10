@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+   box-sizing: border-box;
+   display: flex;
+   justify-content: center;
+
+}
+.container{
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+    width: 600px;
+    border-radius: 5px;
+    background: linear-gradient(45deg,yellow,brown);
+    box-shadow: 2px 2px 5px black;
+}
+.card{
+    width:300px;
+    display: grid;
+    grid-template-rows:200px 200px 50px ;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    overflow: auto;
+    box-shadow: 5px 5px 15px rgba(0, 0,0, 0.9);
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+.image{
+grid-column: 1/-1;
+  background-color: cadetblue;
+}
+ .card .imgae img{
+    height:100px;
+    width: 100px;
+}
+.text{
+background-color: cornsilk;
+grid-column: 1/-1;
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+flex-direction: column;
+}
+.text p{
+    margin: 5px;
+}
+.stats{
+background-color: rgb(57, 226, 226);
+grid-column: 1/-1;
+display: grid;
+grid-template-rows: 1fr;
+grid-template-columns: repeat(3,1fr);
+}
+.cardprice{
+    border-right: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+.cardcolor{
+    border-right: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+.cardsize{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+
+}
+.card:hover{
+    transform: scale(1.2);
+    box-shadow: 5px 5px 15px rgba(0, 0,0, 0.6)
+}
