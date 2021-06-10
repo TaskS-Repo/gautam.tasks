@@ -13,6 +13,7 @@
 
             <div class="cart-detail">
                 <div class="item-name">
+                 
                     <span>Name::</span>
                     <p>{{ $medicines->name }}</p>
                 </div>
@@ -39,8 +40,8 @@
 
                 <div class="delete">
                     <a href="#">
-                        <p>{{$medicines->id}}</p>
-                        <span>Delete</span>
+                        <p class="m_ids">{{$medicines->id}}</p>
+                        <span>Remove</span>
                     </a>
                 </div>
             </div>
@@ -65,7 +66,7 @@ $main_total=0;
         <div class="checkout-card">
             <div class="t-item">
                 <span>Total Item::</span>
-                <p>5</p>
+                <p>{{ $cart_item }}</p>
             </div>
 
             <div class="t-sub">
@@ -75,17 +76,37 @@ $main_total=0;
             <hr>
             <div class="total">
                 <span>Total::</span>
-                <p>Rs.10000</p>
+                <p>{{ $main_total }}</p>
             </div>
 
-            <a href="#">
+            <a href="">
                 <span>Checkout</span>
             </a>
         </div>
 
 </div>
 
+<script>
+    $(function(){
+        var URL="{{ url('/') }}/cart/item/delete/";
+        $('.delete').click(function(){
+            var index=$('.delete').index(this);
+            var text=$('.m_ids').eq(index).text();
+         
+            $.ajax({
+                url:URL+text,
+                headers:{
+                    "X-CSRF-TOKEN":"{{ csrf_token() }}"
+                },
+                success:function(response){
+                    window.location.reload();
+                 }
+            });
 
+            //alert(text);
+        })
+    })
+</script>
 
 
 

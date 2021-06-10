@@ -56,6 +56,7 @@ Route::group(['middleware' => 'auth:sanctum', 'verified'], function () {
     Route::get('/medi-list', [PaymentController::class, 'medilist']);
     Route::get('/checkout', [PaymentController::class, 'cout']);
     Route::get('/cart/medicine/{id?}', [CartController::class, 'store_cart']);
+    Route::get('/cart/item/delete/{id?}',[CartController::class, 'delete_cart']);
     //Dattabel Routes
     Route::get('/userdata', [DatatableController::class, 'index']);
     Route::get('/getuser', [DatatableController::class, 'getuser']);

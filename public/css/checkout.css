@@ -8,6 +8,10 @@
     margin-top: 10px;
 }
 
+.m_ids {
+    display: none;
+}
+
 .checkoutcontainer .left {
     position: fixed;
     overflow-y: scroll;

@@ -34,4 +34,10 @@ class Cart extends Model
         return $cart;
         }
     }
+
+    public function deleteItem($medi_id)
+    {
+        $report=Cart::where('medicine_id',$medi_id)->delete();
+        return $report;
+    }
 }

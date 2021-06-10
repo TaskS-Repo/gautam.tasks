@@ -10,10 +10,16 @@ class CartController extends Controller
     public function store_cart($id=null){
 
         $cart=new Cart();
-
         $report=$cart->addCart($id);
+        return $report;
 
-       return $id;
+    }
+
+    public function delete_cart($medi_id=null)
+    {
+       $cart=new Cart();
+       $report=$cart->deleteItem($medi_id);
+       return $report;
 
     }
 }
